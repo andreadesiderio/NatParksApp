@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Vacation Planner</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Vacation Planner</h1>
+        <form>
+            <label for="sateInput">Choose a State</label>
+            <input type="text" name="stateInput" id="stateInput" class="js-stateInput" placeholder="Ca" required>
+            <label for="maxResultsInput">Max Results?</label>
+            <input type="number" name="limitInput" id="limitInput" class="js-limitInput" placeholder="10" required>
+            <button type="submit">Submit</button> 
+        </form>
+
+        <section class="resultDisplay">
+            <ul class="js-resultsList"></ul>
+        </section>
+
+
+        <script src="jquery-3.4.1.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
