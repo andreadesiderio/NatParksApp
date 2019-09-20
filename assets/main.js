@@ -29,7 +29,7 @@ function requestUrl(url){
     //           cache: 'default' });
     //     const optionItems = Object.keys(options)
     // .map(key =>  `${(key)}:${options[key]}`);
-   const myHeaders = new Headers(); myHeaders.append('X-Api_Key', apiKey);
+   const myHeaders = new Headers(); myHeaders.append('X-Api-Key', apiKey);
 
     const myInit = { method: 'GET', headers: myHeaders, mode: 'cors', cache: 'default' };
     //   console.log(m, url);
