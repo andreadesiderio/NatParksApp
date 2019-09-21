@@ -21,18 +21,19 @@ function convertToParams(state, amount){
 } 
 
 function requestUrl(url){
+    const myHeaders = new Headers(); myHeaders.append('X-Api-Key', apiKey);
     const options = {
         headers : new Headers({ 
              method: 'GET',
-            //  headers: myHeaders,
-            'X-Api-Key' : apiKey,
+              headers: myHeaders,
+            //'X-Api-Key' : apiKey,
                mode: 'cors', 
               cache: 'default' 
             })
         };
     //     const optionItems = Object.keys(options)
     // .map(key =>  `${(key)}:${options[key]}`);
-//    const myHeaders = new Headers(); myHeaders.append('X-Api-Key', apiKey);
+    // const myHeaders = new Headers(); myHeaders.append('X-Api-Key', apiKey);
 
     // const myInit = { method: 'GET', headers: myHeaders, mode: 'cors', cache: 'default' };
     //   console.log(m, url);
