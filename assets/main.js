@@ -10,8 +10,8 @@ function convertToParams(state, amount){
     const params = {
         q : state,
         limit : amount,
-        fields : "addresses"
-        // api_key : apiKey
+        fields : "addresses",
+        api_key : apiKey
     }
     const queryItems = Object.keys(params)
     .map(key =>  `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -21,30 +21,17 @@ function convertToParams(state, amount){
 } 
 
 function requestUrl(url){
-    // const options = {
-    //     headers : new Headers({ 
-    //          method: 'GET',
-    //           headers: myHeaders,
-    //         //'X-Api-Key' : apiKey,
-    //            mode: 'cors', 
-    //           cache: 'default', 
-    //           Accept:"*/*"
-    //         })
-    //     };
-    //     const optionItems = Object.keys(options)
-    // .map(key =>  `${(key)}:${options[key]}`);
-     let myHeaders = new Headers();
-      myHeaders.append("X-Api-Key", apiKey);
+    //  let myHeaders = new Headers();
+    //   myHeaders.append("X-Api-Key", apiKey);
 
-     const myInit = { 
-         method: 'GET',
-          headers: myHeaders,
-           mode: 'cors', 
-           cache: 'default',
-           credentials: 'same-origin'
-         };
-    //   console.log(m, url);
-    fetch(url, myInit)
+    //  const myInit = { 
+    //      method: 'GET',
+    //       headers: myHeaders,
+    //        mode: 'cors', 
+    //        cache: 'default',
+    //        credentials: 'omit'
+    //      };
+    fetch(url)
     .then(response =>{
         if(response.ok){
             return response.json();
