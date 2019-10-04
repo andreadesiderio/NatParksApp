@@ -6,13 +6,16 @@
         <title>Vacation Planner</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="assets/style/normalise.css">
+        <link rel="stylesheet" href="assets/style/main.css">
     </head>
     <body>
         <h1>Vacation Planner</h1>
+        <main>
         <form>
-            <label for="sateInput">Choose a State</label>
-            <input type="text" name="stateInput" id="stateInput" class="js-stateInput" placeholder="Ca" required>
+            <legend>Choose a State</legend>
+            <label for="sateInput">Sate (full name)</label>
+            <input type="text" name="stateInput" id="stateInput" class="js-stateInput" placeholder="Californa" required>
             <label for="maxResultsInput">Max Results?</label>
             <input type="number" name="limitInput" id="limitInput" class="js-limitInput" placeholder="10" required>
             <button type="submit">Submit</button> 
@@ -21,9 +24,9 @@
         <section class="resultDisplay">
             <ul class="js-resultsList"></ul>
         </section>
+    </main>
 
-
-        <script src="assets/jquery-3.4.1.min.js"></script>
-        <script src="assets/main.js"></script>
+        <script src="assets/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="assets/js/main.js" type="text/javascript"></script>
     </body>
 </html>

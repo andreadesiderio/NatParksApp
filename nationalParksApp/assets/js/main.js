@@ -2,9 +2,7 @@
 
 const endpoint = "https://developer.nps.gov/api/v1/parks";
 const apiKey = "ZdtzMrLgjFC3E8V0I1awCl7FQccTeZFhZDfslw6X";
-//https://developer.nps.gov/api/v1/definitions/Park?api_key=ZdtzMrLgjFC3E8V0I1awCl7FQccTeZFhZDfslw6X
 
-///curl -X GET "https://developer.nps.gov/api/v1/parks?q=california&api_key=ZdtzMrLgjFC3E8V0I1awCl7FQccTeZFhZDfslw6X" -H "accept: application/json"
 
 function convertToParams(state, amount){
     const params = {
@@ -44,12 +42,12 @@ function requestUrl(url){
 
 
 function displayResults(responseJson){
-    console.log(responseJson);
     for (let i = 0 ; i < responseJson.data.length; i ++){
         let item = responseJson.data[i];
-    $('.js-resultsList').append(`<h2>${item.fullName}</h2><p>${item.url}</p><p>${item.addresses[0].line2}<br>${item.addresses[0].line1}<br>${item.addresses[0].city}, ${item.addresses[0].stateCode} ${item.addresses[0].postalCode}</p>
-    <p>${item.description}</p>
-    `);}
+    $('.js-resultsList').append(`<li>
+    <h2>${item.fullName}</h2><p><a href="${item.url}" target="_blank">${item.url}</a></p><p class="adress">${item.addresses[0].line2}<br>${item.addresses[0].line1}<br>${item.addresses[0].city}, ${item.addresses[0].stateCode} ${item.addresses[0].postalCode}</p>
+    <p class="description">${item.description}</p>
+    </li>`);}
 }
 
 
@@ -58,6 +56,7 @@ function watchForm(){
         event.preventDefault();
         let state = $('.js-stateInput').val();
         let amount = $('.js-limitInput').val();
+        $('.js-resultsList').empty();
         convertToParams(state, amount);   
     })
 }
