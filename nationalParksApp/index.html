@@ -13,9 +13,9 @@
         <h1>Vacation Planner</h1>
         <main>
         <form>
-            <legend>Choose a State</legend>
-            <label for="sateInput">Sate (full name)</label>
-            <input type="text" name="stateInput" id="stateInput" class="js-stateInput" placeholder="Californa" required>
+            <legend>Choose up to 3 States</legend>
+            <label for="sateInput">Sate codes seperated by commas and spaces</label>
+            <input type="text" name="stateInput" id="stateInput" class="js-stateInput" placeholder="Ca, Wa, Or" pattern="[a-zA-Z]{2}|[a-zA-Z]{2}, [a-zA-Z]{2}|[a-zA-Z]{2}, [a-zA-Z]{2}, [a-zA-Z]{2}" title="Two letter country code list with spaces between"required>
             <label for="maxResultsInput">Max Results?</label>
             <input type="number" name="limitInput" id="limitInput" class="js-limitInput" placeholder="10" required>
             <button type="submit">Submit</button> 

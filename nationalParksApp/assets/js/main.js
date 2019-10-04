@@ -4,9 +4,9 @@ const endpoint = "https://developer.nps.gov/api/v1/parks";
 const apiKey = "ZdtzMrLgjFC3E8V0I1awCl7FQccTeZFhZDfslw6X";
 
 
-function convertToParams(state, amount){
+function convertToParams(states, amount){
     const params = {
-        q : state,
+        stateCode : states,
         limit : amount,
         fields : "addresses",
         api_key : apiKey
@@ -15,6 +15,7 @@ function convertToParams(state, amount){
     .map(key =>  `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
     const queryString = queryItems.join('&');
     const url = endpoint + "?" + queryString;
+    console.log(url);
     requestUrl(url);
 } 
 
@@ -42,6 +43,7 @@ function requestUrl(url){
 
 
 function displayResults(responseJson){
+    console.log(responseJson);
     for (let i = 0 ; i < responseJson.data.length; i ++){
         let item = responseJson.data[i];
     $('.js-resultsList').append(`<li>
@@ -54,11 +56,14 @@ function displayResults(responseJson){
 function watchForm(){
     $('form').on('submit', function(event){
         event.preventDefault();
-        let state = $('.js-stateInput').val();
+        let states = $('.js-stateInput').val();
         let amount = $('.js-limitInput').val();
+        console.log(states);
         $('.js-resultsList').empty();
-        convertToParams(state, amount);   
+        convertToParams(states, amount);   
     })
 }
+
+
 
 $(watchForm);
