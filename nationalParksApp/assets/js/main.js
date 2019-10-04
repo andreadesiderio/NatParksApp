@@ -15,7 +15,6 @@ function convertToParams(states, amount){
     .map(key =>  `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
     const queryString = queryItems.join('&');
     const url = endpoint + "?" + queryString;
-    console.log(url);
     requestUrl(url);
 } 
 
@@ -43,7 +42,6 @@ function requestUrl(url){
 
 
 function displayResults(responseJson){
-    console.log(responseJson);
     for (let i = 0 ; i < responseJson.data.length; i ++){
         let item = responseJson.data[i];
     $('.js-resultsList').append(`<li>
@@ -58,7 +56,6 @@ function watchForm(){
         event.preventDefault();
         let states = $('.js-stateInput').val();
         let amount = $('.js-limitInput').val();
-        console.log(states);
         $('.js-resultsList').empty();
         convertToParams(states, amount);   
     })
