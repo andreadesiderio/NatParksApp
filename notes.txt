@@ -1,5 +1,0 @@
-//https://developer.nps.gov/api/v1/definitions/Park?api_key=ZdtzMrLgjFC3E8V0I1awCl7FQccTeZFhZDfslw6X
-
-///curl -X GET "https://developer.nps.gov/api/v1/parks?q=california&api_key=ZdtzMrLgjFC3E8V0I1awCl7FQccTeZFhZDfslw6X" -H "accept: application/json"
-
-https://www.nps.gov/subjects/developer/api-documentation.htm#/parks/getPark
