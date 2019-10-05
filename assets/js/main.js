@@ -9,7 +9,7 @@ function convertToParams(states, amount){
         stateCode : states,
         limit : amount,
         fields : "addresses",
-        // api_key : apiKey
+         api_key : apiKey
     }
     const queryItems = Object.keys(params)
     .map(key =>  `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -19,17 +19,17 @@ function convertToParams(states, amount){
 } 
 
 function requestUrl(url){
-     let myHeaders = new Headers();
-      myHeaders.append("X-Api-Key", apiKey);
+    //  let myHeaders = new Headers();
+    //   myHeaders.append("X-Api-Key", apiKey);
 
-     const myInit = { 
-         method: 'GET',
-          headers: myHeaders,
-           mode: 'cors', 
-           cache: 'default',
-           credentials: 'omit'
-         };
-    fetch(url, myInit)
+    //  const myInit = { 
+    //      method: 'GET',
+    //       headers: myHeaders,
+    //        mode: 'cors', 
+    //        cache: 'default',
+    //        credentials: 'omit'
+    //      };
+    fetch(url)
     .then(response =>{
         if(response.ok){
             return response.json();
