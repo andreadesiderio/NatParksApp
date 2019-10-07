@@ -10,6 +10,7 @@ function convertToParams(states, amount){
         limit : amount,
         fields : "addresses",
         api_key : apiKey
+        
     }
     const queryItems = Object.keys(params)
     .map(key =>  `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -26,12 +27,12 @@ function requestUrl(url){
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => displayResults(responseJson))
+    .then(responseJson => displayResults(responseJson, url))
     .catch(err => console.log (err.message))
 }
 
 
-function displayResults(responseJson){
+function displayResults(responseJson, url){
     for (let i = 0 ; i < responseJson.data.length; i ++){
         let item = responseJson.data[i];
     $('.js-resultsList').append(`<li>
